@@ -2,16 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
-
-//Tên component phải viết hoa chữ cái đầu.
-//component = html + css + js
-//component phải return về html
-const MyComponent = () => {
-  return (
-    <div> Tibbreat </div>
-  );
-}
+import MyComponent from './components/learn/MyComponent'
+import { SecondComponent, ThirdComponent } from './components/learn/SecondComponent'
 
 
 function App() {
@@ -29,6 +21,8 @@ function App() {
       </div>
       <h1>Hello Tibbreat</h1>
       <MyComponent />
+      <SecondComponent />
+      <ThirdComponent />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
