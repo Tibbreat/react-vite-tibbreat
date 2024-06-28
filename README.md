@@ -33,3 +33,9 @@ Cách chạy tại chế độ production:
 3. Update file .env.production (nếu cần thiết)
 4. Build dự án: npm run build
 5. Chạy dự án: npm run preview
+
+
+Video 30:
+1. Javascript có 2 kiểu dữ liệu:
+ - Primative datatype: boolean, number, string, undefined, null.
+  - Object datatype: 
