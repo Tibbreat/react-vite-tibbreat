@@ -29,15 +29,28 @@ function App() {
   return (
     <div className="todo-container">
       <div className="todo-title">Todo list</div>
-      <TodoNew
-        addNewTodo={addNewTodo}
-      />
-      <TodoData
-        todoList={todoList}
-      />
-      <div className='todo-img'>
-        <img className='logo' src={reactLogo} />
-      </div>
+      <TodoNew addNewTodo={addNewTodo} />
+      {todoList.length > 0 ?
+        <TodoData todoList={todoList} />
+        :
+        <div className='todo-img'>
+          <img className='logo' src={reactLogo} />
+        </div>
+      }
+
+      {/*       
+      {
+        todoList.length > 0 &&
+        <TodoData todoList={todoList} />
+      }
+
+      {
+        todoList.length === 0 &&
+        <div className='todo-img'>
+          <img className='logo' src={reactLogo} />
+        </div>
+      } */
+      }
     </div>
   )
 }
