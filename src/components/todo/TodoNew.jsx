@@ -2,9 +2,6 @@ import { useState } from "react";
 
 const TodoNew = (props) => {
     const { addNewTodo } = props;
-
-    //useState hook
-    // const valueInput = "Trung Kien"
     const [valueInput, setValueInput] = useState("Trung Kien")
 
 
@@ -12,6 +9,7 @@ const TodoNew = (props) => {
 
     const handleClick = () => {
         addNewTodo(valueInput)
+        setValueInput("")
     }
     const handleOnChange = (name) => {
         setValueInput(name)
@@ -23,6 +21,7 @@ const TodoNew = (props) => {
                 // -> Sử dụng arrow function để tránh việc thực thi ngay khi vào web
                 // Vì sử dụng onChange() nên ở đầu hàm, nó sẽ tự đông cho 1 biến 'event'
                 onChange={(event) => { handleOnChange(event.target.value) }}
+                value={valueInput}
             />
             <button
                 onClick={handleClick}

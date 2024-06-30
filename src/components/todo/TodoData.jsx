@@ -1,11 +1,17 @@
 
 const TodoData = (props) => {
     //Destructuring object
-    const { name, age } = props;
+    const { todoList } = props;
 
     return (
         <div className='todo-data'>
-            <div>My Name is {name}</div>
+            {todoList.map((item, index) => {
+                return (
+                    <>
+                        <div>{item.name}<button>Delete</button></div>
+                    </>
+                )
+            })}
             <div>
                 {JSON.stringify(props.todoList)}
             </div>
