@@ -2,7 +2,15 @@ import './components/todo/todo.css'
 import TodoData from './components/todo/TodoData'
 import TodoNew from './components/todo/TodoNew'
 import reactLogo from './assets/react.svg'
+import { useState } from 'react'
 function App() {
+
+  const [todoList, setTodoList] = useState(
+    [
+      { id: 1, name: "Learning React" },
+      { id: 2, name: "Watch TV" }
+    ]
+  )
 
   const demoProps = "Tibbreat"
   const age = 25;
@@ -13,7 +21,15 @@ function App() {
 
 
   const addNewTodo = (name) => {
-    alert(`Call me ${name}`)
+    const newTodo = {
+      id: 3,
+      name: name
+    }
+
+    //C1. array.push (khong nen dung)
+    // todoList.push(newTodo)
+    //C2. dung setter
+    setTodoList([...todoList, newTodo])
   }
 
   return (
@@ -26,6 +42,7 @@ function App() {
         name={demoProps}
         age={age}
         data={data}
+        todoList={todoList}
       />
       <div className='todo-img'>
         <img className='logo' src={reactLogo} />
