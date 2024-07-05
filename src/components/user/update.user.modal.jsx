@@ -1,13 +1,12 @@
-import { Button, Input, message, notification } from "antd";
+import { Input, notification } from "antd";
 import { useEffect, useState } from "react";
 import { Modal } from "antd";
-import { createUserAPI, updateUserAPI } from "../../services/api.service";
+import { updateUserAPI } from "../../services/api.service";
 
 
 const UpdateUserModal = (props) => {
 
     const [fullName, setFullName] = useState("");
-    const [email, setEmail] = useState("");
     const [id, setId] = useState("");
     const [phone, setPhone] = useState("");
     const { isModalUpdateOpen, setIsModalUpdateOpen, dataUpdate, setDataUpdate, loadUser } = props;
@@ -46,13 +45,13 @@ const UpdateUserModal = (props) => {
         setFullName("");
         setPhone("");
         setDataUpdate(null)
-    }
+    };
     return (
         <Modal
             title="Cập nhật thông tin người dùng"
             open={isModalUpdateOpen}
             maskClosable={false}
-            okText={"Save"}
+            okText={"Lưu"}
             onOk={() => handleSubmitBtn()} //Xử lý khi click vào OK button
             onCancel={() => resetAndCloseModal()}>
             <div style={{ display: "flex", gap: "15px", flexDirection: "column" }}>
